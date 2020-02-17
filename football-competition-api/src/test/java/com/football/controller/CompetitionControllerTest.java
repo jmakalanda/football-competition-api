@@ -43,7 +43,7 @@ class CompetitionControllerTest {
 	{
 	    RestTemplate restTemplate = new RestTemplate();
 	     
-	    final String baseUrl = "http://localhost:" + 8081 + "/events/list";
+	    final String baseUrl = "http://localhost:" + 8080 + "/events/list";
 	    URI uri = new URI(baseUrl);
 	 
 	    ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);
@@ -59,7 +59,7 @@ class CompetitionControllerTest {
 	{
 	    RestTemplate restTemplate = new RestTemplate();
 	     
-	    final String baseUrl = "http://localhost:" + 8081 + "/events/status=inprogress";
+	    final String baseUrl = "http://localhost:" + 8080 + "/events/status=inprogress";
 	    URI uri = new URI(baseUrl);
 	 
 	    ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);
@@ -75,7 +75,7 @@ class CompetitionControllerTest {
 	{
 	    RestTemplate restTemplate = new RestTemplate();
 	     
-	    final String baseUrl = "http://localhost:" + 8081 + "/events/status=inprogress/liveStatus=HT";
+	    final String baseUrl = "http://localhost:" + 8080 + "/events/status=inprogress/liveStatus=HT";
 	    URI uri = new URI(baseUrl);
 	 
 	    ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);
