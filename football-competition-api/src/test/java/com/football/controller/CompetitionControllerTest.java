@@ -43,12 +43,12 @@ class CompetitionControllerTest {
 	{
 	    RestTemplate restTemplate = new RestTemplate();
 	     
-	    final String baseUrl = "http://localhost:" + 8081 + "/events/status=inprogress";
+	    final String baseUrl = "http://localhost:" + 8081 + "/events/list";
 	    URI uri = new URI(baseUrl);
 	 
 	    ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);
 	     
-	    //Verify request succeed
+	    //Verify request succeed and the data is as expected
 	    Assert.assertEquals(200, result.getStatusCodeValue());
 	    Assert.assertEquals(true, result.getBody().contains("name"));
 	}
@@ -64,7 +64,7 @@ class CompetitionControllerTest {
 	 
 	    ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);
 	     
-	    //Verify request succeed
+	    //Verify request succeed and the data is as expected
 	    Assert.assertEquals(200, result.getStatusCodeValue());
 	    Assert.assertEquals(true, result.getBody().contains("name"));
 	}
@@ -80,7 +80,7 @@ class CompetitionControllerTest {
 	 
 	    ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);
 	     
-	    //Verify request succeed
+	    //Verify request succeed and the data is as expected
 	    Assert.assertEquals(200, result.getStatusCodeValue());
 	    //[{"id":"hbahiif","name":"Zaglebie Lubin - Pogon Szczecin","competitionId":"ge","competition":"Ekstraklasa","countryId":"eh","country":"Poland","timestamp":"1470576600","date":"07.08.2016.","time":"13:30","statusType":"inprogress","round":4,"homeTeamName":"Zaglebie Lubin","awayTeamName":"Pogon Szczecin","homeScoreCurrent":0,"awayScoreCurrent":0,"liveStatus":"HT"},{"id":"gjghfdb","name":"StabÃ¦k Fotball - Haugesund FK","competitionId":"f","competition":"Eliteserien","countryId":"f","country":"Norway","timestamp":"1470576600","date":"07.08.2016.","time":"13:30","statusType":"inprogress","round":19,"homeTeamName":"StabÃ¦k Fotball","awayTeamName":"Haugesund FK","homeScoreCurrent":0,"awayScoreCurrent":1,"liveStatus":"HT"}]
 	    Assert.assertEquals(true, result.getBody().contains("hbahiif"));
